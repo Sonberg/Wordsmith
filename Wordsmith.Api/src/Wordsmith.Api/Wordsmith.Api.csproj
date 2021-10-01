@@ -10,4 +10,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Wordsmith.Core\Wordsmith.Core.csproj" />
+  </ItemGroup>
+
 </Project>
