@@ -72,6 +72,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Wordsmith.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Wordsmith.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Wordsmith.Core.dll": {}
+        }
       }
     }
   },
@@ -191,11 +201,17 @@
         "swashbuckle.aspnetcore.swaggerui.6.1.5.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Wordsmith.Core/1.0.0": {
+      "type": "project",
+      "path": "../Wordsmith.Core/Wordsmith.Core.csproj",
+      "msbuildProject": "../Wordsmith.Core/Wordsmith.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Swashbuckle.AspNetCore >= 6.1.5"
+      "Swashbuckle.AspNetCore >= 6.1.5",
+      "Wordsmith.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -222,7 +238,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/Wordsmith.Core.csproj": {
+              "projectPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/Wordsmith.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
