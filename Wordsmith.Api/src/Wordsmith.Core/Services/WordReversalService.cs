@@ -7,7 +7,7 @@ namespace Wordsmith.Core.Services
         string Transform(string value);
     }
 
-    public class WordReversalService
+    public class WordReversalService : IWordReversalService
     {
         public WordReversalService()
         {
