@@ -1,37 +1,34 @@
-using Microsoft.AspNetCore.Mvc;
-using Wordsmith.Api.Models;
-
-namespace Wordsmith.Api.Controllers;
-
-[ApiController]
-[Route("word-reversal")]
-public class WordReversalController : ControllerBase
+namespace Wordsmith.Api.Controllers
 {
-    private static readonly string[] Summaries = new[]
+    using Microsoft.AspNetCore.Mvc;
+    using Wordsmith.Api.Models;
+    using Wordsmith.Core.Services;
+
+    [ApiController]
+    [Route("word-reversal")]
+    public class WordReversalController : ControllerBase
     {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        private readonly ILogger<WordReversalController> _logger;
 
-    private readonly ILogger<WordReversalController> _logger;
+        private readonly IWordReversalService _wordReversalService;
 
-    public WordReversalController(ILogger<WordReversalController> logger)
-    {
-        _logger = logger;
-    }
+        public WordReversalController(ILogger<WordReversalController> logger, IWordReversalService wordReversalService)
+        {
+            _logger = logger;
+            _wordReversalService = wordReversalService;
+        }
 
-    [HttpGet]
-    public IEnumerable<WeatherForecast> Get()
-    {
-        return new List<WeatherForecast>();
-    }
+        [HttpPost]
+        public async Task<WordReversalResponse> Post([FromBody] WordReversalRequest request, CancellationToken cancellationToken)
+        {
 
-    [HttpPost]
-    public Task<WordReversalResponse> Post([FromBody] WordReversalRequest request)
-    {
-        return Task.FromResult(new WordReversalResponse {
-            Input = "Hej",
-            Reversed = "jeH"
+            return new WordReversalResponse
+            {
+                Input = request.Value,
+                Reversed = await _wordReversalService.Transform(request.Value, cancellationToken)
 
-        });
+            };
+        }
     }
 }
+

@@ -1,27 +1,42 @@
 ﻿
 namespace Wordsmith.Core.Services
 {
-    using System.Linq;
+    using Models;
+    using Extentions;
+    using Repositories;
 
-    public interface IWordReversalService {
-        string Transform(string value);
+
+    public interface IWordReversalService
+    {
+        Task<string?> Transform(string? value, CancellationToken? cancellationToken);
     }
 
     public class WordReversalService : IWordReversalService
     {
-        public WordReversalService()
+        private readonly IWordTransformationRepository _wordTransformationRepository;
+
+        public WordReversalService(IWordTransformationRepository wordTransformationRepository)
         {
+            _wordTransformationRepository = wordTransformationRepository;
         }
 
-        public string Transform(string value) {
-            return string.Join(" ", value.Split(" ").Select(Reverse));
-        }
+        public async Task<string?> Transform(string? value, CancellationToken? cancellationToken)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
 
-        private string Reverse(string word) {
-            var chars = word.ToCharArray();
-            var reversed = chars.Reverse().ToArray();
+            var reversed = value?.ReverseWords();
 
-            return new string(reversed);
+            await _wordTransformationRepository.StoreAsync(new WordTransformation
+            {
+                Input = value,
+                Result = reversed,
+                CreatedAt = DateTime.Now
+            }, cancellationToken);
+
+            return reversed;
         }
 
     }

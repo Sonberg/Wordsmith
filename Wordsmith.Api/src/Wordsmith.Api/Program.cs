@@ -1,9 +1,11 @@
-using Microsoft.OpenApi.Models;
+using Wordsmith.Core.Services;
+using Wordsmith.Core.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddSingleton<IWordTransformationRepository, WordTransformationRepository>();
+builder.Services.AddSingleton<IWordReversalService, WordReversalService>();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
