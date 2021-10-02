@@ -5,7 +5,7 @@ namespace Wordsmith.Core.Repositories
 
     public interface IWordTransformationRepository
     {
-        Task StoreAsync(WordTransformation transformation, CancellationToken? cancellationToken);
+        Task AddAsync(WordTransformation transformation, CancellationToken? cancellationToken);
     }
 
     public class WordTransformationRepository : IWordTransformationRepository
@@ -14,9 +14,9 @@ namespace Wordsmith.Core.Repositories
         {
         }
 
-        public Task StoreAsync(WordTransformation transformation, CancellationToken? cancellationToken)
+        public async Task AddAsync(WordTransformation transformation, CancellationToken? cancellationToken)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }

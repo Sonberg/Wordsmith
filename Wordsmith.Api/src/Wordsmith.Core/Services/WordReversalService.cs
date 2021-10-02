@@ -29,7 +29,7 @@ namespace Wordsmith.Core.Services
 
             var reversed = value?.ReverseSentence();
 
-            await _wordTransformationRepository.StoreAsync(new WordTransformation
+            await _wordTransformationRepository.AddAsync(new WordTransformation
             {
                 Input = value,
                 Result = reversed,
