@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordsmith.Api", "src\Wordsm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordsmith.Core", "src\Wordsmith.Core\Wordsmith.Core.csproj", "{81692C75-22DC-4CCB-819F-E2B20A0D7412}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8EC9B651-B4DD-4D2F-A0C1-35A9131EAB92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordsmith.Core.Tests", "tests\Wordsmith.Core.Tests\Wordsmith.Core.Tests.csproj", "{3D15E209-D765-43EB-A3DE-00F09B8BC5B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,14 @@ Global
 		{81692C75-22DC-4CCB-819F-E2B20A0D7412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81692C75-22DC-4CCB-819F-E2B20A0D7412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81692C75-22DC-4CCB-819F-E2B20A0D7412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D15E209-D765-43EB-A3DE-00F09B8BC5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D15E209-D765-43EB-A3DE-00F09B8BC5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D15E209-D765-43EB-A3DE-00F09B8BC5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D15E209-D765-43EB-A3DE-00F09B8BC5B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{703E27DE-05B8-4595-9EE7-B2EC61BDD423} = {2833A34F-9AE8-4467-A66E-A904E2942D7C}
 		{81692C75-22DC-4CCB-819F-E2B20A0D7412} = {2833A34F-9AE8-4467-A66E-A904E2942D7C}
+		{3D15E209-D765-43EB-A3DE-00F09B8BC5B6} = {8EC9B651-B4DD-4D2F-A0C1-35A9131EAB92}
 	EndGlobalSection
 EndGlobal

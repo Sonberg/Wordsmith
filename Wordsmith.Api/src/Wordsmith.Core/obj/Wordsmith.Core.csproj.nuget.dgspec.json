@@ -14,7 +14,7 @@
         "outputPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/per.sonberg/.config/NuGet/NuGet.Config"
+          "/Users/per.sonberg/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

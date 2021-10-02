@@ -1,4 +1,34 @@
 ﻿<Properties StartupConfiguration="{703E27DE-05B8-4595-9EE7-B2EC61BDD423}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Wordsmith.Api/Program.cs">
+    <Files>
+      <File FileName="src/Wordsmith.Core/Services/WordReversalService.cs" Line="29" Column="1" />
+      <File FileName="src/Wordsmith.Core/Repositories/WordTransformationRepository.cs" Line="24" Column="1" />
+      <File FileName="src/Wordsmith.Core/Models/WordTransformation.cs" Line="12" Column="1" />
+      <File FileName="src/Wordsmith.Api/Controllers/WordReversalController.cs" Line="5" Column="35" />
+      <File FileName="src/Wordsmith.Api/Program.cs" Line="20" Column="11" />
+      <File FileName="src/Wordsmith.Api/Models/WordReversalRequest.cs" Line="4" Column="23" />
+      <File FileName="src/Wordsmith.Core/Extentions/StringExtension.cs" Line="26" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Wordsmith.Api" expanded="True" selected="True">
+            <Node name="src" expanded="True">
+              <Node name="Wordsmith.Api" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.src.Wordsmith.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
