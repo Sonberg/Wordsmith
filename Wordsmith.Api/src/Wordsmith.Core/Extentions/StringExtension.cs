@@ -17,7 +17,7 @@
             while ((index = getNextIndex()) != -1)
             {
                 if (index - start > 0)
-                    yield return s.Substring(start, index - start);
+                    yield return s[start..index];
                 yield return s.Substring(index, 1);
 
                 start = index + 1;
