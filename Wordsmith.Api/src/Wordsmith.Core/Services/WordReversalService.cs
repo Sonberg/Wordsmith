@@ -27,7 +27,7 @@ namespace Wordsmith.Core.Services
                 return value;
             }
 
-            var reversed = value?.ReverseWords();
+            var reversed = value?.ReverseSentence();
 
             await _wordTransformationRepository.StoreAsync(new WordTransformation
             {
