@@ -11,6 +11,7 @@
     "cypress:run": "./node_modules/.bin/cypress run"
   },
   "dependencies": {
+    "axios": "^0.22.0",
     "cypress": "^8.5.0",
     "next": "11.1.2",
     "react": "17.0.2",
