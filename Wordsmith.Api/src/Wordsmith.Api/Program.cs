@@ -1,11 +1,18 @@
 using Wordsmith.Core.Services;
 using Wordsmith.Core.Repositories;
+using Wordsmith.Core.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<DatabaseContext>(options =>
+           options.UseNpgsql(builder.Configuration.GetConnectionString("Database"), b => b.MigrationsAssembly("Wordsmith.Core")));
+
 // Add services to the container.
-builder.Services.AddSingleton<IWordTransformationRepository, WordTransformationRepository>();
-builder.Services.AddSingleton<IWordReversalService, WordReversalService>();
+builder.Services.AddTransient<IWordTransformationRepository, WordTransformationRepository>();
+builder.Services.AddTransient<IWordReversalService, WordReversalService>();
+builder.Services.AddTransient<IDatabaseContext, DatabaseContext>();
+
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
