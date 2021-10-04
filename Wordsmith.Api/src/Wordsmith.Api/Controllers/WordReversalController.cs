@@ -12,10 +12,20 @@ namespace Wordsmith.Api.Controllers
 
         private readonly IWordReversalService _wordReversalService;
 
-        public WordReversalController(ILogger<WordReversalController> logger, IWordReversalService wordReversalService)
+        private readonly IConfiguration _configuration;
+
+        public WordReversalController(ILogger<WordReversalController> logger, IWordReversalService wordReversalService, IConfiguration configuration)
         {
             _logger = logger;
             _wordReversalService = wordReversalService;
+            _configuration = configuration;
+        }
+
+        [HttpGet("config")]
+        public string Config()
+        {
+
+            return _configuration.GetValue<string>("Database");
         }
 
         [HttpPost]

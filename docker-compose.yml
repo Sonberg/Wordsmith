@@ -1,0 +1,38 @@
+version: "3"
+services:
+  wordsmith-postgres:
+    image: "postgres:9.6-alpine"
+    container_name: wordsmith-postgres
+    volumes:
+      - wordsmith-data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_DB=wordsmith
+      - POSTGRES_USER=wordsmith
+      - POSTGRES_PASSWORD=wordsmith
+
+  wordsmith-api:
+    build: ./Wordsmith.Api
+    container_name: wordsmith-api
+    environment:
+      - PG_HOST=wordsmith-postgres
+      - PG_PORT=5432
+      - PG_USER=wordsmith
+      - PG_PASSWORD=wordsmith
+      - PG_DATABASE=wordsmith
+    ports:
+      - 7272:80
+    links:
+      - wordsmith-postgres
+
+  wordsmith-web:
+    build: ./Wordsmith.Web
+    container_name: wordsmith-web
+    ports:
+      - 3000:3000
+    links:
+      - wordsmith-api
+
+volumes:
+  wordsmith-data:

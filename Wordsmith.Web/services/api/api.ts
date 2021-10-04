@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
 const client = axios.create({
-  baseURL: "https://localhost:7272",
+  baseURL: "http://localhost:7272",
 });
 
 type ReverseSentenceRequest = {
