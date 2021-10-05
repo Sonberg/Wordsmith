@@ -1,9 +1,12 @@
 import { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
+import { string } from "yup";
 
 import { reverseSentence } from "services/api";
 import { useDebounce } from "hooks/useDebounce";
 
 import { Result } from "./components/Result";
+
+const schema = string().required().min(2);
 
 export function SentenceReverser() {
   const [cache, setCache] = useState<Record<string, string>>({});
@@ -25,6 +28,12 @@ export function SentenceReverser() {
         return setResult(cache[value]);
       }
 
+      const isValid = await schema.isValid(value);
+
+      if (!isValid) {
+        return setResult(value);
+      }
+
       setLoading(true);
 
       const { reversed } = await reverseSentence(value);
@@ -42,6 +51,10 @@ export function SentenceReverser() {
   );
 
   useEffect(() => {
+    if (cache[value]) {
+      return setResult(cache[value]);
+    }
+
     handleSearch(debouncedValue);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
