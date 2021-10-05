@@ -6,7 +6,7 @@ import { Result } from "./components/Result";
 export function SentenceReverser() {
   const [value, setValue] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("jlk");
 
   const handleChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value),
@@ -30,7 +30,7 @@ export function SentenceReverser() {
           disabled={isLoading}
           onChange={handleChange}
           placeholder="Write anything, we will reverse it"
-          className="input font-semibold border-2 border-gray-400 appearance-none rounded w-full px-3 py-3 px-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+          className="input font-semibold border-2 border-gray-400 appearance-none w-full px-3 py-3 px-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 max-w-4xl mx-auto"
         />
       </div>
       <Result value={result} />
