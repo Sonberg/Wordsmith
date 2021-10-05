@@ -1,12 +1,14 @@
 
 namespace Wordsmith.Core.Repositories
 {
-    using Models;
+    using Microsoft.EntityFrameworkCore;
 
+    using Models;
     using Contexts;
 
     public interface IWordTransformationRepository
     {
+        Task<List<WordTransformation>> GetAsync(CancellationToken cancellationToken = default);
         Task<WordTransformation> AddAsync(WordTransformation transformation, CancellationToken cancellationToken = default);
     }
 
@@ -17,6 +19,11 @@ namespace Wordsmith.Core.Repositories
         public WordTransformationRepository(IDatabaseContext context)
         {
             _context = context;
+        }
+
+        public  Task<List<WordTransformation>> GetAsync(CancellationToken cancellationToken = default)
+        {
+            return _context.WordTransformations.AsQueryable().ToListAsync();
         }
 
         public async Task<WordTransformation> AddAsync(WordTransformation transformation, CancellationToken cancellationToken = default)

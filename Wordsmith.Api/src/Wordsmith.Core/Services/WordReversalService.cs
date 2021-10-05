@@ -8,6 +8,7 @@ namespace Wordsmith.Core.Services
 
     public interface IWordReversalService
     {
+        Task<List<WordTransformation>> All(CancellationToken cancellationToken = default);
         Task<WordTransformation?> Transform(string? value, CancellationToken cancellationToken = default);
     }
 
@@ -18,6 +19,11 @@ namespace Wordsmith.Core.Services
         public WordReversalService(IWordTransformationRepository wordTransformationRepository)
         {
             _wordTransformationRepository = wordTransformationRepository;
+        }
+
+        public Task<List<WordTransformation>> All(CancellationToken cancellationToken = default)
+        {
+            return _wordTransformationRepository.GetAsync(cancellationToken);
         }
 
         public async Task<WordTransformation?> Transform(string? value, CancellationToken cancellationToken = default)

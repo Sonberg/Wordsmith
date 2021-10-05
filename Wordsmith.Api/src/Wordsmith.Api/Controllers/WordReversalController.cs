@@ -16,10 +16,13 @@ namespace Wordsmith.Api.Controllers
         }
 
         [HttpGet]
-        public string Get()
+        public async Task<List<WordReversalResponse>> Get(CancellationToken cancellationToken)
         {
 
-            return "";
+            var transformations = await _wordReversalService.All(cancellationToken);
+            var result = transformations.Select(WordReversalResponse.From).ToList();
+
+            return result;
         }
 
         [HttpPost]
@@ -27,7 +30,8 @@ namespace Wordsmith.Api.Controllers
         {
             var transformation = await _wordReversalService.Transform(request.Input, cancellationToken);
 
-            if (transformation == null) {
+            if (transformation == null)
+            {
                 throw new BadHttpRequestException("Value cannot be transformed");
             }
 
