@@ -36,13 +36,13 @@ export function SentenceReverser() {
 
       setLoading(true);
 
-      const { reversed } = await reverseSentence(value);
+      const { result } = await reverseSentence(value);
 
-      setResult(reversed);
+      setResult(result);
       setLoading(false);
       setCache((state) => ({
         ...state,
-        [value]: reversed,
+        [value]: result,
       }));
 
       ref.current?.focus();

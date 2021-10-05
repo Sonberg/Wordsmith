@@ -5,19 +5,19 @@ const client = axios.create({
 });
 
 type ReverseSentenceRequest = {
-  value: string;
+  input: string;
 };
 
 type ReverseSentenceResponse = AxiosResponse<{
   input: string;
-  reversed: string;
+  result: string;
 }>;
 
-export async function reverseSentence(value: string) {
+export async function reverseSentence(input: string) {
   const { data } = await client.post<
     ReverseSentenceRequest,
     ReverseSentenceResponse
-  >("/word-reversal", { value });
+  >("/word-reversal", { input });
 
   return data;
 }
