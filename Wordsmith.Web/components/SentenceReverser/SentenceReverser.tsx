@@ -11,7 +11,6 @@ const schema = string().required().min(2);
 export function SentenceReverser() {
   const [cache, setCache] = useState<Record<string, string>>({});
   const [value, setValue] = useState("");
-  const [isLoading, setLoading] = useState(false);
   const [result, setResult] = useState("");
 
   const ref = useRef<HTMLInputElement | null>(null);
@@ -34,12 +33,9 @@ export function SentenceReverser() {
         return setResult(value);
       }
 
-      setLoading(true);
-
       const { result } = await reverseSentence(value);
 
       setResult(result);
-      setLoading(false);
       setCache((state) => ({
         ...state,
         [value]: result,
@@ -51,10 +47,6 @@ export function SentenceReverser() {
   );
 
   useEffect(() => {
-    if (cache[value]) {
-      return setResult(cache[value]);
-    }
-
     handleSearch(debouncedValue);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,15 +54,13 @@ export function SentenceReverser() {
 
   return (
     <>
-      <div className="flex">
-        <input
-          ref={ref}
-          value={value}
-          onChange={handleChange}
-          placeholder="Write anything, we will reverse it"
-          className="input font-semibold border-2 border-gray-400 appearance-none w-full px-3 py-3 px-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 max-w-4xl mx-auto"
-        />
-      </div>
+      <input
+        ref={ref}
+        value={value}
+        onChange={handleChange}
+        placeholder="Write anything, we will reverse it"
+        className="input font-semibold border-2 border-gray-400 appearance-none w-full px-3 py-3 px-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 max-w-4xl mx-auto"
+      />
       <Result value={result} />
     </>
   );
