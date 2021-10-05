@@ -7,7 +7,7 @@ namespace Wordsmith.Core.Repositories
 
     public interface IWordTransformationRepository
     {
-        Task AddAsync(WordTransformation transformation, CancellationToken cancellationToken = default);
+        Task<WordTransformation> AddAsync(WordTransformation transformation, CancellationToken cancellationToken = default);
     }
 
     public class WordTransformationRepository : IWordTransformationRepository
@@ -19,10 +19,12 @@ namespace Wordsmith.Core.Repositories
             _context = context;
         }
 
-        public async Task AddAsync(WordTransformation transformation, CancellationToken cancellationToken = default)
+        public async Task<WordTransformation> AddAsync(WordTransformation transformation, CancellationToken cancellationToken = default)
         {
             await _context.WordTransformations.AddAsync(transformation, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
+
+            return transformation;
         }
     }
 }

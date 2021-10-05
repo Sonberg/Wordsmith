@@ -8,36 +8,30 @@ namespace Wordsmith.Api.Controllers
     [Route("word-reversal")]
     public class WordReversalController : ControllerBase
     {
-        private readonly ILogger<WordReversalController> _logger;
-
         private readonly IWordReversalService _wordReversalService;
 
-        private readonly IConfiguration _configuration;
-
-        public WordReversalController(ILogger<WordReversalController> logger, IWordReversalService wordReversalService, IConfiguration configuration)
+        public WordReversalController(IWordReversalService wordReversalService)
         {
-            _logger = logger;
             _wordReversalService = wordReversalService;
-            _configuration = configuration;
         }
 
-        [HttpGet("config")]
-        public string Config()
+        [HttpGet]
+        public string Get()
         {
 
-            return _configuration.GetValue<string>("Database");
+            return "";
         }
 
         [HttpPost]
         public async Task<WordReversalResponse> Post([FromBody] WordReversalRequest request, CancellationToken cancellationToken)
         {
+            var transformation = await _wordReversalService.Transform(request.Input, cancellationToken);
 
-            return new WordReversalResponse
-            {
-                Input = request.Value,
-                Reversed = await _wordReversalService.Transform(request.Value, cancellationToken)
+            if (transformation == null) {
+                throw new BadHttpRequestException("Value cannot be transformed");
+            }
 
-            };
+            return WordReversalResponse.From(transformation);
         }
     }
 }
