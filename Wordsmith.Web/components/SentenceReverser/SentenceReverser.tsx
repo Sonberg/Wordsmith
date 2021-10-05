@@ -6,7 +6,7 @@ import { Result } from "./components/Result";
 export function SentenceReverser() {
   const [value, setValue] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const [result, setResult] = useState("jlk");
+  const [result, setResult] = useState("");
 
   const handleChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value),
