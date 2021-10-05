@@ -3,6 +3,7 @@ using Wordsmith.Core.Repositories;
 using Wordsmith.Core.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var variable = (string key) => Environment.GetEnvironmentVariable(key) ?? builder.Configuration.GetValue<string>(key);
@@ -32,7 +33,11 @@ builder.Services.AddTransient<IWordTransformationRepository, WordTransformationR
 builder.Services.AddTransient<IWordReversalService, WordReversalService>();
 builder.Services.AddTransient<IDatabaseContext, DatabaseContext>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(s =>
+{
+    s.RegisterValidatorsFromAssemblyContaining<Program>();
+});
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "Wordsmith.Api", Version = "v1" });
@@ -62,4 +67,5 @@ app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
+
 app.Run(app.Environment.IsDevelopment() ? "http://localhost:7272" : null);

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cALw5Eqyvg1x3BttGA9kztWKNCVdhTlZ/ZK5JjG2q+QR+LnFAowOqRyP2pL3WVgBzmlCfg3DbjZoRkxq9PudXA==",
+  "dgSpecHash": "c5InV7/0rv48yFu1rLQNxd+UTCfd3OT2a2dblBLNbaqxfYtaUl9lDVwuFajHPwC9QsWeV4KmZ9WlhhEHHE0vDA==",
   "success": true,
   "projectFilePath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Api/Wordsmith.Api.csproj",
   "expectedPackageFiles": [
+    "/Users/per.sonberg/.nuget/packages/fluentvalidation/10.3.3/fluentvalidation.10.3.3.nupkg.sha512",
+    "/Users/per.sonberg/.nuget/packages/fluentvalidation.aspnetcore/10.3.3/fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",
+    "/Users/per.sonberg/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.3.3/fluentvalidation.dependencyinjectionextensions.10.3.3.nupkg.sha512",
     "/Users/per.sonberg/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/per.sonberg/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/per.sonberg/.nuget/packages/microsoft.entityframeworkcore/5.0.10/microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
