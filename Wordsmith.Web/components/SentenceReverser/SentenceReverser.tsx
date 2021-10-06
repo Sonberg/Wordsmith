@@ -33,7 +33,7 @@ export function SentenceReverser() {
         return setResult(value);
       }
 
-      const { result } = await reverseSentence(value);
+      const result = await reverseSentence(value);
 
       setResult(result);
       setCache((state) => ({

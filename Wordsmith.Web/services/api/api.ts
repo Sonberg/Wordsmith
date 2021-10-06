@@ -1,23 +1,22 @@
 import axios, { AxiosResponse } from "axios";
 
 const client = axios.create({
-  baseURL: "http://localhost:7272",
+  baseURL: process.env.API_URL,
 });
 
-type ReverseSentenceRequest = {
+type Request = {
   input: string;
 };
 
-type ReverseSentenceResponse = AxiosResponse<{
+type Response = AxiosResponse<{
   input: string;
   result: string;
 }>;
 
 export async function reverseSentence(input: string) {
-  const { data } = await client.post<
-    ReverseSentenceRequest,
-    ReverseSentenceResponse
-  >("/word-reversal", { input });
+  const { data } = await client.post<Request, Response>("/api/word-reversal", {
+    input,
+  });
 
-  return data;
+  return data.result;
 }

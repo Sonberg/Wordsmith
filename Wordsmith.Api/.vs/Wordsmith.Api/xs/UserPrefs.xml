@@ -1,21 +1,21 @@
 ﻿<Properties StartupConfiguration="{703E27DE-05B8-4595-9EE7-B2EC61BDD423}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="src/Wordsmith.Api/Program.cs">
     <Files>
-      <File FileName="src/Wordsmith.Core/Services/WordReversalService.cs" Line="11" Column="93" />
-      <File FileName="src/Wordsmith.Core/Repositories/WordTransformationRepository.cs" Line="27" Column="6" />
-      <File FileName="src/Wordsmith.Core/Models/WordTransformation.cs" Line="5" Column="35" />
+      <File FileName="src/Wordsmith.Core/Services/WordReversalService.cs" Line="11" Column="91" />
+      <File FileName="src/Wordsmith.Core/Repositories/WordTransformationRepository.cs" Line="7" Column="20" />
+      <File FileName="src/Wordsmith.Core/Models/WordTransformation.cs" Line="10" Column="1" />
       <File FileName="src/Wordsmith.Api/Controllers/WordReversalController.cs" Line="26" Column="10" />
-      <File FileName="src/Wordsmith.Api/Program.cs" Line="12" Column="6" />
-      <File FileName="src/Wordsmith.Api/Models/WordReversalRequest.cs" Line="4" Column="23" />
+      <File FileName="src/Wordsmith.Api/Program.cs" Line="26" Column="6" />
+      <File FileName="src/Wordsmith.Api/Models/WordReversalRequest.cs" Line="2" Column="37" />
       <File FileName="src/Wordsmith.Core/Extentions/StringExtension.cs" Line="26" Column="34" />
-      <File FileName="tests/Wordsmith.Core.Tests/Extensions/StringExtensions.cs" Line="59" Column="10" />
       <File FileName="src/Wordsmith.Core/.gitignore" Line="16" Column="28" />
       <File FileName="tests/Wordsmith.Core.Tests/Extensions/StringExtension/StringExtension_ReverseWord.cs" Line="30" Column="22" />
-      <File FileName="src/Wordsmith.Api/Models/WordReversalResponse.cs" Line="1" Column="1" />
+      <File FileName="src/Wordsmith.Api/Models/WordReversalResponse.cs" Line="22" Column="11" />
       <File FileName="tests/Wordsmith.Core.Tests/Extensions/StringExtension/StringExtension_SplitOnSymbols.cs" Line="84" Column="21" />
       <File FileName="src/Wordsmith.Core/Contexts/DatabaseContext.cs" Line="35" Column="1" />
-      <File FileName="src/Wordsmith.Api/appsettings.json" Line="16" Column="1" />
+      <File FileName="src/Wordsmith.Api/appsettings.json" Line="9" Column="24" />
       <File FileName="src/Wordsmith.Api/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="src/Wordsmith.Api/Validators/WordReversalRequestValidator.cs" Line="15" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,9 +23,8 @@
           <Node name="Wordsmith.Api" expanded="True">
             <Node name="src" expanded="True">
               <Node name="Wordsmith.Api" expanded="True">
-                <Node name="Controllers" expanded="True" />
                 <Node name="Models" expanded="True" />
-                <Node name="appsettings.json" expanded="True" />
+                <Node name="Validators" expanded="True" />
                 <Node name="Program.cs" selected="True" />
               </Node>
               <Node name="Wordsmith.Core" expanded="True">
@@ -44,9 +43,7 @@
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="Wordsmith.Api" expanded="True" selected="True">
-            <Node name="tests" expanded="True" />
-          </Node>
+          <Node name="Wordsmith.Api" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
