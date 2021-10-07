@@ -4,6 +4,149 @@
     "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/tests/Wordsmith.Api.Tests/Wordsmith.Api.Tests.csproj": {}
   },
   "projects": {
+    "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Api/Wordsmith.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Api/Wordsmith.Api.csproj",
+        "projectName": "Wordsmith.Api",
+        "projectPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Api/Wordsmith.Api.csproj",
+        "packagesPath": "/Users/per.sonberg/.nuget/packages/",
+        "outputPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/per.sonberg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/Wordsmith.Core.csproj": {
+                "projectPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/Wordsmith.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/Wordsmith.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/Wordsmith.Core.csproj",
+        "projectName": "Wordsmith.Core",
+        "projectPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/Wordsmith.Core.csproj",
+        "packagesPath": "/Users/per.sonberg/.nuget/packages/",
+        "outputPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/per.sonberg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/tests/Wordsmith.Api.Tests/Wordsmith.Api.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -25,7 +168,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Api/Wordsmith.Api.csproj": {
+                "projectPath": "/Users/per.sonberg/Programming/Wordsmith/Wordsmith.Api/src/Wordsmith.Api/Wordsmith.Api.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
