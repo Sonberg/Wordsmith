@@ -11,6 +11,8 @@ Postgres v9
 ## Api
 
 ### Tests
+All tests are running i Github Actions on every commit
+
 1. Navigate to Wordsmith.Api folder with terminal
 2. Ensure .NET 6 i installed locally
 3. Run `dotnet test` in terminal
