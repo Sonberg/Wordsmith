@@ -5,6 +5,7 @@ COPY Wordsmith.Api.sln dist/Wordsmith.Api.sln
 COPY src/Wordsmith.Api/Wordsmith.Api.csproj dist/src/Wordsmith.Api/
 COPY src/Wordsmith.Core/Wordsmith.Core.csproj dist/src/Wordsmith.Core/
 COPY tests/Wordsmith.Core.Tests/Wordsmith.Core.Tests.csproj dist/tests/Wordsmith.Core.Tests/
+COPY tests/Wordsmith.Api.Tests/Wordsmith.Api.Tests.csproj dist/tests/Wordsmith.Api.Tests/
 WORKDIR /dist
 RUN dotnet restore
 COPY . .
