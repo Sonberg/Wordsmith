@@ -8,6 +8,10 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    
+defaults:
+  run:
+    working-directory: Wordsmith.Web
 
 jobs:
   build:
@@ -25,6 +29,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd Wordsmith.Web && npm ci
-    - run: cd Wordsmith.Web && npm run build --if-present
-    - run: cd Wordsmith.Web && npm test
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
