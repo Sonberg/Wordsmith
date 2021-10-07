@@ -3,8 +3,12 @@ name: .NET
 on:
   push:
     branches: [ master ]
+    paths:
+    - 'Wordsmith.Api/**'
   pull_request:
     branches: [ master ]
+    paths:
+    - 'Wordsmith.Api/**'
 
 jobs:
   build:
