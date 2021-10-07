@@ -10,6 +10,9 @@
     "cypress:open": "./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run"
   },
+  "engines": {
+    "node": "16.10.0"
+  },
   "dependencies": {
     "axios": "^0.22.0",
     "cypress": "^8.5.0",
