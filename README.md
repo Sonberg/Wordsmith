@@ -27,8 +27,11 @@ https://localhost:7272/swagger/index.html
 
 ### Stack
 - .NET 6 
-- Entity framwork
+- Entity framework
 - Fluent Validation
+
+### Logging
+No logging are implemented but a would probably use ApplicationInsights or Serilog. Something that catches unhandled exceptions and store it somewhere accessible. With an api to log custom messages and information. 
 
 ## Web
 
@@ -39,7 +42,7 @@ https://localhost:7272/swagger/index.html
 
 ### Develop
 1. Navigate to Wordsmith.Web folder with terminal
-2. Ensure Node 16 is installad using NVM (Node version manager)
+2. Ensure Node 16 is installed using NVM (Node version manager)
 3. Run `nvm use` to change version in NVM
 4. Run `npm run dev` in terminal
 
@@ -49,3 +52,6 @@ https://localhost:7272/swagger/index.html
 - framer-motion
 - cypress
 - tailwind css
+
+### Logging
+For the front-end stack i would use tool for globally catching errors like Sentry or ApplicationInsights browser package. 
