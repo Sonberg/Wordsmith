@@ -24,9 +24,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+          path: Wordsmith.Web
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
+        path: Wordsmith.Web
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
