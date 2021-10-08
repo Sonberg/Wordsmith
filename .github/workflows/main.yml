@@ -3,10 +3,10 @@ name: Docker
 on:
   push:
     branches:
-    - master
+      - master
   pull_request:
     branches:
-    - master
+      - master
 
 jobs:
   docker:
@@ -14,12 +14,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
 
-    - name: Start containers
-      run: docker-compose -f "docker-compose.yml" up -d --build
-      
-    - name: Stop containers
-      if: always()
-      run: docker-compose -f "docker-compose.yml" down
+      - name: Start containers
+        run: docker-compose -f "docker-compose.yml" up -d --build
+
+      - name: Run integration tests
+        run: cd Wordsmith.Web && npm run cypress:run
+
+      - name: Stop containers
+        if: always()
+        run: docker-compose -f "docker-compose.yml" down

@@ -5,6 +5,9 @@ Monorepo for **api** and **web** belonging to Wordsmith
 ## Run
 Run `docker-compose up` in terminal
 
+## Deloy
+Can be deployed to any cloud provider supporting containers. AWS, Google Cloud or Azure.
+
 ## Database
 Postgres v9
 
@@ -31,7 +34,7 @@ https://localhost:7272/swagger/index.html
 - Fluent Validation
 
 ### Logging
-No logging are implemented but a would probably use ApplicationInsights or Serilog. Something that catches unhandled exceptions and store it somewhere accessible. With an api to log custom messages and information. 
+No logging are implemented but a would probably use **ApplicationInsights** or **Serilog**. Something that catches unhandled exceptions and store it somewhere accessible. With an api to log custom messages and information. 
 
 ## Web
 

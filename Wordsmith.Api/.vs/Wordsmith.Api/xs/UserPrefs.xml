@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{703E27DE-05B8-4595-9EE7-B2EC61BDD423}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/Wordsmith.Api/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="tests/Wordsmith.Api.Tests/Validators/WordReversalRequestValidatorTests.cs">
     <Files>
       <File FileName="src/Wordsmith.Core/Services/WordReversalService.cs" Line="11" Column="91" />
       <File FileName="src/Wordsmith.Core/Repositories/WordTransformationRepository.cs" Line="7" Column="20" />
@@ -16,23 +16,16 @@
       <File FileName="src/Wordsmith.Api/appsettings.json" Line="9" Column="24" />
       <File FileName="src/Wordsmith.Api/appsettings.Development.json" Line="1" Column="1" />
       <File FileName="src/Wordsmith.Api/Validators/WordReversalRequestValidator.cs" Line="15" Column="1" />
+      <File FileName="tests/Wordsmith.Core.Tests/Extensions/StringExtension/StringExtension_ReverseSentence.cs" Line="1" Column="1" />
+      <File FileName="tests/Wordsmith.Api.Tests/Validators/WordReversalRequestValidatorTests.cs" Line="66" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Wordsmith.Api" expanded="True">
-            <Node name="src" expanded="True">
-              <Node name="Wordsmith.Api" expanded="True">
-                <Node name="Models" expanded="True" />
+            <Node name="tests" expanded="True">
+              <Node name="Wordsmith.Api.Tests" expanded="True">
                 <Node name="Validators" expanded="True" />
-                <Node name="Program.cs" selected="True" />
-              </Node>
-              <Node name="Wordsmith.Core" expanded="True">
-                <Node name="Contexts" expanded="True" />
-                <Node name="Extentions" expanded="True" />
-                <Node name="Models" expanded="True" />
-                <Node name="Repositories" expanded="True" />
-                <Node name="Services" expanded="True" />
               </Node>
             </Node>
           </Node>
