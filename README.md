@@ -40,8 +40,10 @@ No logging are implemented but a would probably use **ApplicationInsights** or *
 
 ### Integration tests
 1. Navigate to Wordsmith.Web folder with terminal
-2. Run `npm run cypress:run` to run tests i terminal
-3. Run `npm run cypress:open` to open Cypress application
+2. Run `nvm use` to ensure correct Node version is used
+3. Run `npm install` to ensure all packages are installed
+4. Run `npm run cypress:run` to run tests i terminal
+5. Run `npm run cypress:open` to open Cypress application
 
 ### Develop
 1. Navigate to Wordsmith.Web folder with terminal

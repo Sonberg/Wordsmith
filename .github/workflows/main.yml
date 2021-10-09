@@ -20,6 +20,9 @@ jobs:
       - name: Start containers
         run: docker-compose -f "docker-compose.yml" up -d --build
 
+      - name: Run integration tests
+        run: cd Wordsmith.Web && npm install && npm run cypress:run
+
       - name: Stop containers
         if: always()
         run: docker-compose -f "docker-compose.yml" down
