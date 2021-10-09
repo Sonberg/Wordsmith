@@ -39,6 +39,8 @@ No logging are implemented but a would probably use **ApplicationInsights** or *
 ## Web
 
 ### Integration tests
+The integration tests are running every push to **Master** inside **Github Actions**
+
 1. Navigate to Wordsmith.Web folder with terminal
 2. Run `nvm use` to ensure correct Node version is used
 3. Run `npm install` to ensure all packages are installed
