@@ -3,7 +3,9 @@
 Monorepo for **api** and **web** belonging to Wordsmith
 
 ## Run
-Run `docker-compose up` in terminal
+1. Clone repository
+2. Run `docker-compose up` in terminal
+3. Visit http://localhost:3000
 
 ## Deloy
 Can be deployed to any cloud provider supporting containers. AWS, Google Cloud or Azure.
