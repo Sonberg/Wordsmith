@@ -59,7 +59,7 @@ export function SentenceReverser() {
         value={value}
         onChange={handleChange}
         placeholder="Write anything, we will reverse it"
-        className="input font-semibold border-2 border-gray-400 appearance-none w-full px-3 py-3 px-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 max-w-4xl mx-auto"
+        className="input font-semibold border-2 border-gray-400 appearance-none w-full px-3 py-3 px-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
       />
       <Result value={result} />
     </>
