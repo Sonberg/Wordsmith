@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { string } from "yup";
 
 import { reverseSentence } from "services/api";
@@ -13,7 +13,6 @@ export function SentenceReverser() {
   const [value, setValue] = useState("");
   const [result, setResult] = useState("");
 
-  const ref = useRef<HTMLInputElement | null>(null);
   const debouncedValue = useDebounce(value, 200);
 
   const handleChange = useCallback(
@@ -40,8 +39,6 @@ export function SentenceReverser() {
         ...state,
         [value]: result,
       }));
-
-      ref.current?.focus();
     },
     [cache]
   );
@@ -55,7 +52,6 @@ export function SentenceReverser() {
   return (
     <>
       <input
-        ref={ref}
         value={value}
         onChange={handleChange}
         placeholder="Write anything, we will reverse it"
